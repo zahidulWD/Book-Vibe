@@ -10,6 +10,7 @@ import Root from './Component/Root';
 import ErrorPage from './Component/ErrorPage/ErrorPage';
 import Home from './Component/Home/Home';
 import DashBord from './Component/DashBord/DashBord';
+import BookDetail from './Component/BookDetail/BookDetail';
 
 
 const router = createBrowserRouter([
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path:'/',
         element: <Home></Home>,
+      },
+      {
+        path:'books/:bookId',
+        element: <BookDetail></BookDetail>
       },
       {
         path:'dashbord',
