@@ -5,17 +5,19 @@ const Book = ({book}) => {
     const {bookId,image,bookName,author,tags,category,rating} = book;
     return (
        <Link to={`/books/${bookId}`}>
-           <div className="card bg-base-100 shadow-xl w-[374px] gap-[24] p-[24px]">
+           <div className="card bg-base-100 shadow-xl w-[374px] gap-[24] h-[550px] p-[24px]">
            <figure className="bg-[rgb(243,_243,_243)] rounded-xl py-6">
              <img
                src={image}
-               className="h-[166px] order-none self-stretch flex-grow-0 mx-0 my-[24px]"
+               className="h-[166px] order-none self-stretch flex-grow-0 mx-0 my-[24px] mb-4"
                alt={bookName } />
            </figure>
            <div className="card-body">
             <div className="flex justify-start gap-4">
                 {
-                   tags.map(tag =><button class="btn btn-xs items-center bg-green-200 text-green-600">{tag}</button>)
+                   tags.map((tag,index) =><button 
+                   key={index}
+                   class="btn btn-xs items-center bg-green-200 text-green-600">{tag}</button>)
                 }
             </div>
              <h2 className="card-title">
