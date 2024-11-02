@@ -1,13 +1,50 @@
 import { NavLink } from "react-router-dom"
-import Home from './../Home/Home';
+// import Home from './../Home/Home';
 
 
 const Navbar = () => {
 
     const links = <>
-        <li><NavLink to='/' className='box-border border border-[rgb(35,190,10)] rounded-[8px] text-white bg-transparent cursor-pointer no-underline'>Home</NavLink></li>
-        <li><NavLink to='Listed Book'>Listed Books</NavLink></li>
-        <li><NavLink to='Pages to Read'>Pages to Read</NavLink></li>
+<ul className="flex space-x-4">
+  <li>
+    <NavLink 
+      to="/" 
+      className={({ isActive }) => 
+        isActive 
+          ? "border border-green-500 text-green-500 px-4 py-2 rounded-lg" 
+          : "text-gray-600 px-4 py-2"
+      }
+    >
+      Home
+    </NavLink>
+  </li>
+  <li>
+    <NavLink 
+      to="listedbook" 
+      className={({ isActive }) => 
+        isActive 
+          ? "border border-green-500 text-green-500 px-4 py-2 rounded-lg" 
+          : "text-gray-600 px-4 py-2"
+      }
+    >
+      Listed Books
+    </NavLink>
+  </li>
+  <li>
+    <NavLink 
+      to="pagestoread" 
+      className={({ isActive }) => 
+        isActive 
+          ? "border border-green-500 text-green-500 px-4 py-2 rounded-lg" 
+          : "text-gray-600 px-4 py-2"
+      }
+    >
+      Pages to Read
+    </NavLink>
+  </li>
+</ul>
+
+
     </>
     return (
         <div className="navbar bg-base-100 mt-6">

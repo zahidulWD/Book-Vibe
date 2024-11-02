@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 const Book = ({book}) => {
 
+  const handleToastify = () => {
+    toast.success(`You selected Book : ${bookName}`);
+  }
+
     const {bookId,image,bookName,author,tags,category,rating} = book;
     return (
-       <Link to={`/books/${bookId}`}>
+       <Link to={`/books/${bookId}`}  onClick={handleToastify}>
            <div className="card bg-base-100 shadow-xl w-[374px] gap-[24] h-[550px] p-[24px]">
            <figure className="bg-[rgb(243,_243,_243)] rounded-xl py-6">
              <img
